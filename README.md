@@ -6,7 +6,7 @@ GameJam 2022, Klintra, Føroya-tele
 
 | Name      | Role        |
 | --------- | ----------- |
-| Hariett   |             |
+| Harriet   |  Narration  |
 | Edvin     |             |
 | Julian    | Game Design |
 | Sólvá     | Artist      |

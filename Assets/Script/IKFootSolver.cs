@@ -6,6 +6,7 @@ public class IKFootSolver : MonoBehaviour
 {
     [SerializeField] LayerMask terrainLayer = default;
     [SerializeField] Transform body = default;
+    public GameObject footNeutralPos;
     [SerializeField] IKFootSolver otherFoot = default;
     [SerializeField] float speed = 1;
     [SerializeField] float stepDistance = 4;
@@ -40,7 +41,8 @@ public class IKFootSolver : MonoBehaviour
             {
                 lerp = 0;
                 int direction = body.InverseTransformPoint(info.point).z > body.InverseTransformPoint(newPosition).z ? 1 : -1;
-                newPosition = info.point + (body.forward * stepLength * direction) + footOffset;
+                gameObject.transform.Translate((footNeutralPos.transform.position - currentPosition ).normalized*stepDistance* 2f,Space.World);
+                newPosition = gameObject.transform.position;
                 newNormal = info.normal;
             }
         }

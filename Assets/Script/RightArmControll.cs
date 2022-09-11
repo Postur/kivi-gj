@@ -29,19 +29,20 @@ public class RightArmControll : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         if(controlArmR["ControlArmR"].IsPressed()){
             if(!controlling){
                 // handTarget.transform.localPosition = initialPos;
                 upperArmIK.rotation = initialRot;
             }
-            Debug.Log("Controlling ARM");
             controlling = true;
             // handIK.weight = 1;
             Vector2 newpos = controlArmR["MousePos"].ReadValue<Vector2>()*sensitivity;
             //handTarget.transform.Translate(new Vector3(newpos.x,0,newpos.y)/100/sensitivity);
-            upperArmIK.Rotate(newpos.y,0,newpos.x,Space.World);
+            Debug.Log(newpos.y);
+            upperArmIK.Rotate(newpos.y,newpos.x,0,Space.World);
+            // upperArmIK.rotation = new Quaternion(newpos.y,newpos.x,newpos.y,0);
         }
         else
         {

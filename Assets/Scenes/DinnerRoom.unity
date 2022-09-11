@@ -9090,6 +9090,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318815000}
   m_Mesh: {fileID: 6255804620278384975, guid: bad3215b87510f398aee9d2d432b853e, type: 3}
+--- !u!1 &322116074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8008851356957171618, guid: 63edd8311e2eb8348ace2ad94cc65da7, type: 3}
+  m_PrefabInstance: {fileID: 1459449317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &322200037
 GameObject:
   m_ObjectHideFlags: 0
@@ -45902,6 +45907,10 @@ PrefabInstance:
       propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23906796820398656, guid: eded3844e29c2ec40bc278e2cbd31279, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97923140cb419a1448fee6c0cbe7872e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eded3844e29c2ec40bc278e2cbd31279, type: 3}
 --- !u!1 &2060180759
@@ -50248,7 +50257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a9a7e86514e6a469d213230739bb46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winScreen: {fileID: 0}
+  winScreen: {fileID: 322116074}
   win: 0
 --- !u!33 &4131685069928504983
 MeshFilter:

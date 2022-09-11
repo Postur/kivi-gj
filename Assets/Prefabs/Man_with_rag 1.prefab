@@ -1462,7 +1462,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 860acb43ffac118499b576029f6fc2a7, type: 3}
   - {fileID: 8300000, guid: 2e3cc5a773c38f1479cfa2aa52c6968a, type: 3}
   - {fileID: 8300000, guid: 8ae6188e1ce20c14daa97b3f65063025, type: 3}
+  - {fileID: 8300000, guid: 415f1849f43d011469a2ee20098731f9, type: 3}
+  - {fileID: 8300000, guid: 60aa3a9b82ba4fd418cdfe47b58ecdfe, type: 3}
+  - {fileID: 8300000, guid: 9cc272914e71469498ddb97326c9db7c, type: 3}
+  - {fileID: 8300000, guid: c9c1ffe92f5bf874b8db52ae2b8a1714, type: 3}
+  - {fileID: 8300000, guid: 0c73f02d547212f41864ad939411bb4d, type: 3}
   aS: {fileID: 1646613728880046330}
+  hasDied: 0
   knockDownVelocity: 1
 --- !u!82 &1646613728880046330
 AudioSource:

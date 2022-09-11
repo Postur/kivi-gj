@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Animations.Rigging;
+using UnityEngine.SceneManagement;
 using StarterAssets;
 public class RightArmControll : MonoBehaviour
 {
@@ -41,7 +41,10 @@ public Rigidbody handRb;
 private GameObject[] grabableItems;
     // Update is called once per frame
     void Update()
-    {
+    {   
+        if(controlArmR["reset"].IsInProgress()){
+            SceneManager.LoadScene("DinnerRoom");
+        }
         if(controlArmR["ControlArmR"].IsPressed()){
             if(!controlling){
                 // handTarget.transform.localPosition = initialPos;

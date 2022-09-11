@@ -40,7 +40,7 @@ public class RightArmControll : MonoBehaviour
             // handIK.weight = 1;
             Vector2 newpos = controlArmR["MousePos"].ReadValue<Vector2>()*sensitivity;
             //handTarget.transform.Translate(new Vector3(newpos.x,0,newpos.y)/100/sensitivity);
-            Debug.Log(newpos.y);
+            // Debug.Log(newpos.y);
             upperArmIK.Rotate(newpos.y,newpos.x,0,Space.World);
             // upperArmIK.rotation = new Quaternion(newpos.y,newpos.x,newpos.y,0);
         }

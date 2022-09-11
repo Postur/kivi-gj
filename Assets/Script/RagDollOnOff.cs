@@ -27,7 +27,7 @@ public class RagDollOnOff : MonoBehaviour
         newPos = gameObject.transform.position;
         float vel = ((newPos-oldPos)*Time.deltaTime).magnitude;
         // Debug.Log(vel);
-        Debug.Log(mainRB.velocity);
+        // Debug.Log(mainRB.velocity);
         if(mainRB.velocity.magnitude>knockDownVelocity || mainRB.angularVelocity.magnitude>knockDownVelocity){
             RagDollOn();
         }

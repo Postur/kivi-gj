@@ -1458,7 +1458,10 @@ MonoBehaviour:
   animator: {fileID: 5518824623468518541}
   flyBitch: 15
   smack:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: e6f2a4692c1db4c4e8d048131d61a3af, type: 3}
+  - {fileID: 8300000, guid: 860acb43ffac118499b576029f6fc2a7, type: 3}
+  - {fileID: 8300000, guid: 2e3cc5a773c38f1479cfa2aa52c6968a, type: 3}
+  - {fileID: 8300000, guid: 8ae6188e1ce20c14daa97b3f65063025, type: 3}
   aS: {fileID: 1646613728880046330}
   knockDownVelocity: 1
 --- !u!82 &1646613728880046330

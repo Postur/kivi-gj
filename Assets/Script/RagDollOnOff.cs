@@ -14,7 +14,7 @@ public class RagDollOnOff : MonoBehaviour
     private Vector3 newPos;
     public AudioClip[] smack;
     public AudioSource aS;
-    private bool hasDied;
+    public bool hasDied;
     public float knockDownVelocity;
     // Start is called before the first frame update
     void Start()

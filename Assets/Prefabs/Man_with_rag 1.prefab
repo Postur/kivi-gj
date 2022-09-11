@@ -1455,6 +1455,7 @@ MonoBehaviour:
   mainRB: {fileID: 5518824622530429025}
   theRig: {fileID: 2222008465219420581}
   animator: {fileID: 5518824623468518541}
+  flyBitch: 5
   knockDownVelocity: 1
 --- !u!1 &5518824623189675155
 GameObject:

@@ -8,6 +8,7 @@ public class RagDollOnOff : MonoBehaviour
     public Rigidbody mainRB;
     public GameObject theRig;
     public Animator animator;
+    public float flyBitch;
     private Vector3 oldPos;
     private Vector3 newPos;
     public float knockDownVelocity;
@@ -51,7 +52,7 @@ public class RagDollOnOff : MonoBehaviour
         }
         foreach (Rigidbody rigid in rigidbodies)
         {
-            
+            rigid.AddForce(mainRB.velocity*flyBitch);
             rigid.useGravity = true;
             rigid.isKinematic = false;
         }

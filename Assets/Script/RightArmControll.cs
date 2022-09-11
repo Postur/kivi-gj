@@ -65,7 +65,7 @@ private GameObject[] grabableItems;
                         {
                             heldItem = item;
                         }
-                        Debug.Log(item.name);
+                        // Debug.Log(item.name);
                         if (Vector3.Distance(hand.transform.position,item.transform.position)<Vector3.Distance(hand.transform.position,heldItem.transform.position)){
                             heldItem = item;
                             heldItemRb = heldItem.GetComponent<Rigidbody>();
@@ -82,7 +82,7 @@ private GameObject[] grabableItems;
                 if(heldItemRb){
                     // heldItemRb.velocity = new Vector3(0,0,0);
                     heldItemRb.AddForce(handRb.velocity*200);
-                    Debug.Log(handRb.velocity);
+                    // Debug.Log(handRb.velocity);
                     
                 }
                 heldItem = null;

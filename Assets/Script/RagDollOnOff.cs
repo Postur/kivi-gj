@@ -14,13 +14,14 @@ public class RagDollOnOff : MonoBehaviour
     private Vector3 newPos;
     public AudioClip[] smack;
     public AudioSource aS;
+    private bool hasDied;
     public float knockDownVelocity;
     // Start is called before the first frame update
     void Start()
     {
         oldPos = newPos = gameObject.transform.position;
         getRagDoll();
-
+        hasDied = false;
         RagDollOff();
     }
 
@@ -61,8 +62,12 @@ public class RagDollOnOff : MonoBehaviour
         }
         boxColl.enabled = false;
         int rand = Random.Range(0,smack.Length-1);
+        if(!aS.isPlaying && !hasDied){
         aS.clip = smack[rand];
+
         aS.Play();
+        hasDied = true;
+        }
 
     }
     void RagDollOff(){

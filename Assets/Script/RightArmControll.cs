@@ -37,6 +37,7 @@ public class RightArmControll : MonoBehaviour
 
 private GameObject heldItem;
 private Rigidbody heldItemRb;
+private Collider heldItemCol;
 public Rigidbody handRb;
 private GameObject[] grabableItems;
     // Update is called once per frame
@@ -72,10 +73,12 @@ private GameObject[] grabableItems;
                         if (Vector3.Distance(hand.transform.position,item.transform.position)<Vector3.Distance(hand.transform.position,heldItem.transform.position)){
                             heldItem = item;
                             heldItemRb = heldItem.GetComponent<Rigidbody>();
+                            heldItemCol = heldItem.GetComponent<Collider>();
                         }
                     }
                 }
                 else{
+                heldItemCol.enabled = false;
                 handCol.enabled = false;
                 heldItem.transform.position = hand.transform.position;
                 }
@@ -90,6 +93,7 @@ private GameObject[] grabableItems;
                 }
                 heldItem = null;
                 handCol.enabled = true;
+                heldItemCol.enabled = true;
             }
         }
         else

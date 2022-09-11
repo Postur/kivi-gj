@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Animations.Rigging;
+using StarterAssets;
 public class RightArmControll : MonoBehaviour
 {
     public InputActionMap controlArmR;
@@ -12,6 +13,9 @@ public class RightArmControll : MonoBehaviour
     public Vector3 initialPos;
     public Quaternion initialRot;
     public Transform upperArm;
+    public ThirdPersonController tpc;
+    public GameObject hand;
+    public Collider handCol;
 
     public float sensitivity;
     private bool controlling;
@@ -26,8 +30,15 @@ public class RightArmControll : MonoBehaviour
     {
         // initialPos = handTarget.transform.localPosition;
         initialRot = upperArmIK.rotation;
+        grabableItems = GameObject.FindGameObjectsWithTag("Grabbable");
+
+        Debug.Log(grabableItems);
     }
 
+private GameObject heldItem;
+private Rigidbody heldItemRb;
+public Rigidbody handRb;
+private GameObject[] grabableItems;
     // Update is called once per frame
     void Update()
     {
@@ -35,6 +46,7 @@ public class RightArmControll : MonoBehaviour
             if(!controlling){
                 // handTarget.transform.localPosition = initialPos;
                 upperArmIK.rotation = initialRot;
+                tpc.LockCameraPosition = true;
             }
             controlling = true;
             // handIK.weight = 1;
@@ -43,12 +55,48 @@ public class RightArmControll : MonoBehaviour
             // Debug.Log(newpos.y);
             upperArmIK.Rotate(newpos.y,newpos.x,0,Space.World);
             // upperArmIK.rotation = new Quaternion(newpos.y,newpos.x,newpos.y,0);
+            if (controlArmR["Grab"].IsPressed()){
+                if(!heldItem){
+
+                    
+                    foreach (var item in grabableItems)
+                    {
+                        if (heldItem == null)
+                        {
+                            heldItem = item;
+                        }
+                        Debug.Log(item.name);
+                        if (Vector3.Distance(hand.transform.position,item.transform.position)<Vector3.Distance(hand.transform.position,heldItem.transform.position)){
+                            heldItem = item;
+                            heldItemRb = heldItem.GetComponent<Rigidbody>();
+                        }
+                    }
+                }
+                else{
+                handCol.enabled = false;
+                heldItem.transform.position = hand.transform.position;
+                }
+            }
+            else
+            {   
+                if(heldItemRb){
+                    // heldItemRb.velocity = new Vector3(0,0,0);
+                    heldItemRb.AddForce(handRb.velocity*200);
+                    Debug.Log(handRb.velocity);
+                    
+                }
+                heldItem = null;
+                handCol.enabled = true;
+            }
         }
         else
         {
             // handIK.weight = 0;
             controlling = false;
+            tpc.LockCameraPosition = false;
+            heldItem = null;
         }
+
     }
 
 }

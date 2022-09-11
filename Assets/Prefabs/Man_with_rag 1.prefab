@@ -1389,7 +1389,7 @@ GameObject:
   - component: {fileID: 5518824622530429027}
   m_Layer: 4
   m_Name: Man_with_rag 1
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

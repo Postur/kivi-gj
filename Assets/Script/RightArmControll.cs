@@ -81,7 +81,7 @@ private GameObject[] grabableItems;
             {   
                 if(heldItemRb){
                     // heldItemRb.velocity = new Vector3(0,0,0);
-                    heldItemRb.AddForce(handRb.velocity*200);
+                    heldItemRb.AddForce(handRb.velocity*2);
                     // Debug.Log(handRb.velocity);
                     
                 }

@@ -63,10 +63,10 @@ public class RagDollOnOff : MonoBehaviour
         boxColl.enabled = false;
         int rand = Random.Range(0,smack.Length-1);
         if(!aS.isPlaying && !hasDied){
-        aS.clip = smack[rand];
-
-        aS.Play();
-        hasDied = true;
+            aS.clip = smack[rand];
+    
+            aS.Play();
+            hasDied = true;
         }
 
     }

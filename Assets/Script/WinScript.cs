@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class WinScript : MonoBehaviour
 {
+    public GameObject winScreen;
     public bool win;
-    public RagDollOnOff[] smorgens;
+    private RagDollOnOff[] smorgens;
     // Start is called before the first frame update
     void Start()
     {
+        win = false;
         smorgens = gameObject.GetComponentsInChildren<RagDollOnOff>();
     }
 
@@ -18,15 +20,14 @@ public class WinScript : MonoBehaviour
         foreach (RagDollOnOff smorgen in smorgens)
         {
             if (!smorgen.hasDied){
-                win = false;
+                
+                break;
             }
-            else{
-                win = true;
-            }
+            win = true;
         }
         if (win)
         {
-            
+            winScreen.SetActive(true);
         }
     }
 }

@@ -91,6 +91,7 @@ private GameObject[] grabableItems;
                     // Debug.Log(handRb.velocity);
                     
                 }
+                
                 heldItem = null;
                 handCol.enabled = true;
                 heldItemCol.enabled = true;

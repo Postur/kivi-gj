@@ -3151,6 +3151,14 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+    - m_Name: reset
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 6e727c94-e2d2-4312-af88-6560be3067b8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
     m_Bindings:
     - m_Name: 
       m_Id: cb21a1c8-d433-49df-857e-a43861715b0b
@@ -3207,6 +3215,14 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Grab
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 05063712-3939-4162-a8eb-e32122b65252
+      m_Path: <Keyboard>/r
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: reset
       m_Flags: 0
   upperArmIK: {fileID: 4843949664319716417}
   initialPos: {x: 0, y: 0, z: 0}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Animations.Rigging;
+using UnityEngine.SceneManagement;
 using StarterAssets;
 public class RightArmControll : MonoBehaviour
 {
@@ -37,11 +37,15 @@ public class RightArmControll : MonoBehaviour
 
 private GameObject heldItem;
 private Rigidbody heldItemRb;
+private Collider heldItemCol;
 public Rigidbody handRb;
 private GameObject[] grabableItems;
     // Update is called once per frame
     void Update()
-    {
+    {   
+        if(controlArmR["reset"].IsInProgress()){
+            SceneManager.LoadScene("DinnerRoom");
+        }
         if(controlArmR["ControlArmR"].IsPressed()){
             if(!controlling){
                 // handTarget.transform.localPosition = initialPos;
@@ -69,10 +73,12 @@ private GameObject[] grabableItems;
                         if (Vector3.Distance(hand.transform.position,item.transform.position)<Vector3.Distance(hand.transform.position,heldItem.transform.position)){
                             heldItem = item;
                             heldItemRb = heldItem.GetComponent<Rigidbody>();
+                            heldItemCol = heldItem.GetComponent<Collider>();
                         }
                     }
                 }
                 else{
+                heldItemCol.enabled = false;
                 handCol.enabled = false;
                 heldItem.transform.position = hand.transform.position;
                 }
@@ -85,8 +91,10 @@ private GameObject[] grabableItems;
                     // Debug.Log(handRb.velocity);
                     
                 }
+                
                 heldItem = null;
                 handCol.enabled = true;
+                heldItemCol.enabled = true;
             }
         }
         else

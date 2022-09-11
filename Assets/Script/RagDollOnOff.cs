@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+
+using UnityEngine;  
 
 public class RagDollOnOff : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class RagDollOnOff : MonoBehaviour
     public float flyBitch;
     private Vector3 oldPos;
     private Vector3 newPos;
+    public AudioClip[] smack;
+    public AudioSource aS;
     public float knockDownVelocity;
     // Start is called before the first frame update
     void Start()
@@ -57,6 +60,9 @@ public class RagDollOnOff : MonoBehaviour
             rigid.isKinematic = false;
         }
         boxColl.enabled = false;
+        int rand = Random.Range(0,smack.Length-1);
+        aS.clip = smack[rand];
+        aS.Play();
 
     }
     void RagDollOff(){
